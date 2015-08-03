@@ -72,7 +72,7 @@ section:nth-child(odd) aside {
   position: fixed;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, ul:not(.nostyle) {
   position: absolute;
   font-family: "Yanone Kaffeesatz";
   line-height: 1em;
@@ -81,7 +81,7 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 160px;
-  top: 160px;
+  top: 60px;
   width: 1120px;
 }
 
@@ -98,11 +98,13 @@ h2 {
   -webkit-text-stroke: #000 1px;
 }
 
-ul, pre {
+ul:not(.nostyle), pre {
   margin: 0;
+  font-size: 40px;
 }
 
 pre, code {
+  postion:absolute
   font-family: "Menlo", monospace;
 }
 
@@ -112,12 +114,12 @@ pre {
 
 q:before,
 blockquote:before {
-  content: "â€œ";
+  content: open-quote;
 }
 
 q:after,
 blockquote:after {
-  content: "â€";
+  content: close-quote;
 }
 
 q.nogap:after {
@@ -200,4 +202,32 @@ screen and (max-device-width: 1024px) {
     margin: 40px 0;
     -webkit-transform: none;
   }
+}
+
+.slice {
+  height: 500px;
+  font-family: "Yanone Kaffeesatz";
+  width: 205px;
+  display: inline-block;
+  padding: 5px;
+  font-size: 120px;
+  color: white;
+  /*text-align: center;*/
+}
+
+.editing {
+  background: white;
+}
+
+.stylebox {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+
+.codeness {
+  position:absolute;
+  top:40%;
+  font-size: 24px;
+  line-height:1.4em;
 }
