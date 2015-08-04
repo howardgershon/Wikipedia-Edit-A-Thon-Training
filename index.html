@@ -23,7 +23,7 @@
         </ul>
     </section>
     <section>
-        <iframe src="http://www.kansascitystandard.com/wiki.html" frameborder="0" style="height: 720px; position:absolute; top:0px; left:0px; width:1280px">  </iframe>
+        <iframe id='wikivis' src="http://www.kansascitystandard.com/wiki.html" frameborder="0" style="height: 720px; position:absolute; top:0px; left:0px; width:1280px">  </iframe>
     </section>
     <section>
       <div style='height = 500px; width = 600px'>
@@ -69,6 +69,9 @@
     <section style='background-image:url(./images/censored.jpg); background-size: 50%; background-position: center; background-repeat: no-repeat'>
         <h1 class='shadow'> censored </h1>
     </section>
+    <section style=''>
+      <h2 class='blue'> Don't worry you can't break it.</h2>
+    </section>
     <section style='background-image:url(./images/wikipage.png); background-size: cover; background-position: center; background-repeat: no-repeat'>
         <h1 class='shadow'> Editing Wikipedia: <br> the nuts and bolts </h1>
     </section>
@@ -95,15 +98,13 @@
 <td style="width:50%; background:#f9f9f9; border-width:1px;border-style:solid none none solid;border-color:#ddd; padding:9px 5px 5px; vertical-align:top">
 <pre style="margin:0;border:none;padding:10; word-wrap:break-word; white-space:-moz-pre-wrap;white-space:-o-pre-wrap;white-space:-pre-wrap;white-space:pre-wrap; color:black; font-size:16px">
 
-Indentation as used on talk pages:
+Indentation finds can be implemented by using colons
 :Each colon at the start of a line
 ::causes the line to be indented by three more character positions.
 :::(The indentation persists
 so long as no carriage return or line break is used.)
 :::Repeat the indentation at any line break.
-::::Use an extra colon for each response.
-:::::And so forth ...
-::::::And so on ...
+
 </pre></td>
 <td style="width:50%; background:#f9f9f9; border-width:1px;border-style:solid solid none solid;border-color:#ddd; padding:5px; vertical-align:top; color:black; font-size:12px">
   <div style="">
@@ -249,9 +250,32 @@ so long as no carriage return or line break is used.)
     <section style='background-image:url(./images/madarnold.jpg); background-size: cover; background-position: center; background-repeat: no-repeat'>
         <h1 class='shadow'> Need Help </h1>
     </section>
+    <section style='background-image: url(http://www.kansascitystandard.com/comm5510/images/baby.jpg)'>
+      <h1 class='white shadow'> About Me </h1>
+        <ul class='white shadow' style='position:absolute; top: 400px; left: 300px; font-size: 80px; font-weight:bold'>
+          <li> www.kansascitystandard.com </li>
+          <li> howardgershon on github.com </li>
+          <li> @howardgershon on twitter.com </li>
+        </ul>
+    </section>
     <section style='background-image:url(./images/cat_tank_roomba.gif); background-size: cover; background-position: center; background-repeat: no-repeat'>
         <h1 class='shadow'> Questions </h1>
     </section>
     <script src="http://mbostock.github.com/stack/stack.v0.js"></script>
+    <script>
 
+      var mystack = stack()
+        .on("activate", activate)
+        .on("deactivate", deactivate);
+
+      function activate(d, i) {
+        if (i === followIndex) mystack.on("scroll.follow", document.getElementById('some_frame_id').contentWindow.location.reload(););
+        if (i === lorenzIndex) startLorenz();
+      }
+
+      function deactivate(d, i) {
+        if (i === followIndex) mystack.on("scroll.follow", null);
+        if (i === lorenzIndex) stopLorenz();
+      }
+    </script>
 </body>
