@@ -23,7 +23,8 @@
         </ul>
     </section>
     <section>
-        <iframe id='wikivis' src="http://www.kansascitystandard.com/wiki.html" frameborder="0" style="height: 720px; position:absolute; top:0px; left:0px; width:1280px">  </iframe>
+        <!--<iframe id='wikivis' src="http://www.kansascitystandard.com/wiki.html" frameborder="0" style="height: 720px; position:absolute; top:0px; left:0px; width:1280px">  </iframe> -->
+        <canvas> </canvas>
     </section>
     <section>
       <div style='height = 500px; width = 600px'>
@@ -278,4 +279,100 @@ so long as no carriage return or line break is used.)
         if (i === lorenzIndex) stopLorenz();
       }
     </script>
+
+    <script type="text/javascript">
+    var data;
+
+    var edits = [];
+
+    var wid = document.documentElement.scrollWidth;
+
+    var ws = new WebSocket('ws://wikimon.hatnote.com/en/');
+    //ws.onmessage() = function(msg){makeMark(msg.data);};
+
+      var info;
+
+      ws.onmessage = function(msg){
+
+        var word = document.getElementById('words');
+        var section = document.getElementById('infofoot');
+        data= JSON.parse(msg.data);
+        info = msg.data;
+
+        var ran = Math.random();
+
+        var posx = Math.random()*document.documentElement.scrollWidth;
+        var posy = Math.random()*document.documentElement.scrollHeight;
+
+
+        //console.log(posy);
+
+        //word.innerHTML=data.page_title;
+
+        //word.appendChild(document.createElement("br"));
+        //word.appendChild(document.createElement("br"));
+
+
+        //build info object
+        info = {cs : data.change_size, x : posx, y : posy, title : data.page_title, url : data.url, user: data.user };
+        //push
+        //console.log(data);
+        //section.innerHTML = "<a href='"+data.url+"'>" + data.page_title + "</a> <br>" + data.user;
+        edits.push(info);
+
+        place();
+
+      }
+
+      var populate = function (t, a, c, o){
+        var section = document.getElementById('infofoot');
+        section.innerHTML = "Page: <a href='http://en.wikipedia.org/wiki/"+t+"'>" + t + "</a> <br> User: " + a + "<br> Change Size: <a href='" + c + "'>" + o + "</a>";
+      }
+
+
+    </script>
+
+<script>
+  var svg;
+
+  $(function(){svg = d3.select('#canvas')
+    .append("svg")
+    .attr('width', '100%')
+    .attr('height', '100%');});
+
+
+  var place = function () {
+    var text = svg.select("text")
+      .data(edits)
+      .enter()
+      .append("text");
+
+    svg.selectAll("circle")
+      .data(edits)
+      .enter().append("circle")
+      .style("stroke", "white")
+      .style("fill", "#5696bc")
+      .style('opacity', '1')
+      .attr("r", function (d){return (Math.log(Math.abs(d.cs)+1)*5+10)})
+      .attr("cx", function(d){return d.x+Math.log(Math.abs(d.cs)+1)*5+10})
+      .attr("cy", function(d){return d.y+Math.log(Math.abs(d.cs)+1)*5+10})
+      //.text(function(d){ return d.title})
+      .on("mouseover", function(d){d3.select(this).style('fill', '#e04836');
+                    populate(d.title, d.user, d.url, d.cs);
+/* 										 text.attr("x", function() { return d.x+2*(Math.log(Math.abs(d.cs)+1)*5+15); })
+                        .attr("y", function() { return d.y+(Math.log(Math.abs(d.cs)+1)*5+10);})
+                        .attr('fill', '#fff')
+                        //.attr('id', 'title')
+                        .attr('font-size', '10px')
+                        .attr('font-weight', 'bold')
+                        .text(function(){ return d.title}); */
+                      d3.select("#infofoot").style("display", 'block');})
+      .on("mouseout", function(d){d3.select(this).style('fill', '#5696bc');});
+
+
+
+
+    //svg.selectAll()
+  };
+</script>
 </body>
