@@ -1,0 +1,44 @@
+{{Infobox library
+| library_name       = Utah State Library
+| library_logo       =
+| image              =
+| caption            =
+| country            = [[United States of America]]
+| type               = [[Government of Virginia]]
+| scope              =
+| established        = 1957
+| ref_legal_mandate  =
+| location           = [[Salt Lake City, Utah]]
+| coordinates        =
+| items_collected    =
+| collection_size    =
+| criteria           =
+| req_to_access      =
+| annual_circulation =
+| budget             =
+| director           = Donna Jones Morris
+| num_employees      =
+| website            = http://library.utah.gov/
+| references         =<ref name='about'>{{cite web|title=About the Utah State Library|url=http://heritage.utah.gov/library/about|publisher=Utah State Library|accessdate=4 August 2015}}</ref>
+}}
+The '''Utah State Library''' in [[Salt Lake City, Utah]] is a division of the [[Utah Department of Heritage and Arts]].
+==History==
+The Utah State Library was created in 1957 when [[George D. Clyde|Governor George D. Clyde]] appointed a ten person library commission in accordance with a recently passed state law.<ref name='50pam'>{{cite book|title=Celebrating 50 Years: Utah State Library|url=http://utah.ptfs.com/awweb/awarchive?type=file&item=10159|publisher=Utah State Library|accessdate=4 August 2015}}</ref>  The library was originally housed in the [[Utah Governor's Mansion|Governor's Mansion]] before it moved to the [[Utah State Fair|state fair grounds]] and ultimately was moved to 2150 South 300 West in Salt Lake City.<ref name='50pam' /> In 1998 it moved to its current location at 250 North 1950 West in Salt Lake City.<ref name='50pam' />
+==Purpose==
+According to the Utah State Library's 2014 Annual Report, the Utah State Library "provides funding, training, professional expertise and technical advice to library directors, staff, and trustees all across Utah."<ref name='annreport'> {{cite book|title=Utah State Library 2014 Annual Report|url=http://heritage.utah.gov/wp-content/uploads/USL-2014-Annual-Report.pdf?5bf229|publisher=Utah State Library|accessdate=4 August 2015}}</ref>
+==Services==
+* Book Buzz<ref name='services'>{{cite web|title=Library Services & Programs|url=http://heritage.utah.gov/library/library-services|publisher=Utah State Library|accessdate=4 August 2015}}</ref>
+* Interlibrary Loan<ref name='services' />
+* Library Outreach<ref name='services' />
+* Library Trustee Center<ref name='services' />
+==State Librarians==
+* Russell Davis 1957-1987<ref name='50pam' />
+* Amy Owen 1987-2004<ref name='50pam' />
+* Donna Jones Morris 2004-Present<ref name='50pam' />
+==References==
+{{reflist}}
+==External Links==
+[http://library.utah.gov Utah State Library's Website]
+
+{{Utah-stub}}
+{{library-stub}}
